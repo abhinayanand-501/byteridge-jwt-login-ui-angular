@@ -1,0 +1,11 @@
+<h1>Audit Information</h1>
+<div>
+    <p><a (click) = "logout()">Logout</a></p>
+    <ul *ngIf="auditinfo.length !== 0" >
+        <div *ngFor="let data of auditinfo" >
+            <li *ngFor="let auditdata of data.authenticationlogs">
+                <p>{{data.firstName}} {{data.lastName}} {{auditdata.type}} at {{auditdata.createdAt | date:"medium"}} from Ip address {{auditdata.clientIp}}</p>
+            </li>
+        </div>
+    </ul>
+</div>
